@@ -1,73 +1,59 @@
 package com.javaexpress.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document(collection = "parts")
 public class Parts {
-	
-	@Id
-	
-	private String partID;
-	
-	
-	private String partNumber;
-	
-	private String name;
-	
-	private String description;
-	
-	private Integer Quantity;
-	
-	public Parts()
-	{
-		
-	}
 
-	public String getPartID() {
-		return partID;
-	}
+    @Id
+    private String partID;   // MongoDB ObjectId stored as String
 
-	public void setPartID(String partID) {
-		this.partID = partID;
-	}
+    private String partNumber;
+    private String name;
+    private String description;
+    private Integer quantity;
 
-	public String getPartNumber() {
-		return partNumber;
-	}
+    public Parts() {
+    }
 
-	public void setPartNumber(String partNumber) {
-		this.partNumber = partNumber;
-	}
+    public String getPartID() {
+        return partID;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setPartID(String partID) {
+        this.partID = partID;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getPartNumber() {
+        return partNumber;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public void setPartNumber(String partNumber) {
+        this.partNumber = partNumber;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public Integer getQuantity() {
-		return Quantity;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setQuantity(Integer quantity) {
-		Quantity = quantity;
-	}
-	
-	
-	
-	
+    public String getDescription() {
+        return description;
+    }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
 }
